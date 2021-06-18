@@ -14,6 +14,7 @@ router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 router.register(r'AnuncioAnimal', views.AnuncioAnimalViewSet) 
 router.register(r'Pessoa', views.PessoaViewSet) 
+router.register(r'Blog', views.BlogViewSet) 
 
 
 urlpatterns = [

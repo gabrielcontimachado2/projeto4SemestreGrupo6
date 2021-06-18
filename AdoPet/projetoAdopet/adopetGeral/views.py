@@ -1,8 +1,8 @@
 from django.contrib.auth.models import User, Group
 from django.http.response import HttpResponse
-from .serializers import GroupSerializer, PessoaSerializer, UserSerializer, AnuncioSerializer
+from .serializers import BlogSerializer, GroupSerializer, PessoaSerializer, UserSerializer, AnuncioSerializer
 from rest_framework import permissions, authentication, viewsets
-from .models import AnuncioAnimal, FotosAnuncio, Pessoa
+from .models import AnuncioAnimal, Blog, FotosAnuncio, Pessoa
 
 from django.contrib.auth import authenticate
 from django.views.decorators.csrf import csrf_exempt
@@ -20,6 +20,11 @@ class UserViewSet(viewsets.ModelViewSet):
 class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+class BlogViewSet(viewsets.ModelViewSet):
+    queryset = Blog.objects.all()
+    serializer_class = BlogSerializer
+    permissions_classes = (permissions.IsAuthenticated, )
 
 class AnuncioAnimalViewSet(viewsets.ModelViewSet):
     queryset = AnuncioAnimal.objects.all()

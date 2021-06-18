@@ -92,5 +92,32 @@ class Pessoa(models.Model):
         managed = True
         db_table = 'tab_Pessoa'
         verbose_name_plural=u'Pessoas'
-    
+
+class Blog(models.Model):
+
+    titulo = models.CharField(verbose_name="Titulo", max_length=250, help_text="Digite o titulo da postagem")
+    autor = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    capaPostagem = models.ImageField(upload_to= "media/fotoPostagem", blank=True, null=True)
+    postagem = models.TextField(help_text="Digite sua postagem aqui")
+    dataCriacao = models.DateField(verbose_name="Data criação", help_text="dd/mm/aaaa", null=True)
    
+    def __str__(self):
+        return self.titulo
+
+    class Meta:
+        managed = True
+        db_table = 'tab_Blog'
+        verbose_name_plural=u'Blogs'
+
+class ComentarioBlog(models.Model):
+    postagem = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    comentario = models.TextField(help_text="Digite seu comentario")
+    autorComentario = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.postagem
+
+    class Meta:
+        managed = True
+        db_table = 'tab_ComentarioBlog'
+        verbose_name_plural=u'Comentarios'

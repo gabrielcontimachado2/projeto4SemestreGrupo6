@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from .models import AnuncioAnimal, FotosAnuncio, Pessoa
+from .models import AnuncioAnimal, Blog, FotosAnuncio, Pessoa
 from django.http import HttpResponse
 
 class UserSerializer(serializers.ModelSerializer):
@@ -14,10 +14,10 @@ class GroupSerializer(serializers.ModelSerializer):
         model = Group
         fields = ['id','url', 'name']
 
-class GroupSerializer(serializers.ModelSerializer):
+class BlogSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Group
-        fields = ['id','url', 'name']
+        model = Blog
+        fields = '__all__'
 
 class FotoAnuncioSerializer(serializers.ModelSerializer):
     class Meta:
