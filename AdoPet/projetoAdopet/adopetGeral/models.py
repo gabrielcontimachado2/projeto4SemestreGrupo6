@@ -114,9 +114,6 @@ class ComentarioBlog(models.Model):
     comentario = models.TextField(help_text="Digite seu comentario")
     autorComentario = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
-    def __str__(self):
-        return self.postagem
-
     class Meta:
         managed = True
         db_table = 'tab_ComentarioBlog'
