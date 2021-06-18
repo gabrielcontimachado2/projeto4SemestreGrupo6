@@ -1,0 +1,25 @@
+<div class="container container-fluid teste container-pequeno">
+
+    <section class="pagina-padrao fundo-branco mb-3 mb-3 py-5 px-5">
+
+        <div class="mx-auto w-50 card-cinza login p-4">
+
+            <h2>Entrar no site</h2>
+
+            <form class="form-group " [formGroup]="formGroup" (ngSubmit)="loginProcess()">
+                <label for="email">E-mail</label>
+                <input type="text" id="email" name="" class="form-control" placeholder="Digite seu e-mail" formControlName="username">
+
+                <label for="email">Senha</label>
+                <input type="password" id="senha" name="" class="form-control" placeholder="Digite sua senha" formControlName="password">
+
+                <button type="submit" class="btn btn-primary mt-3 mb-4">Entrar</button>
+            </form>
+
+            <a href="cadastro-usuario.html">Não sou cadastrado</a>
+            <br>
+            <a href="#">Esqueceu sua senha?</a>
+
+        </div>	
+
+    </section>

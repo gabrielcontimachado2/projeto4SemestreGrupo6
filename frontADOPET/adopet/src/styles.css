@@ -1,0 +1,489 @@
+/* You can add global styles to this file, and also import other style files */
+/* Início - Formatação padrão */
+
+
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	font-family: Helvetica, sans-serif;
+	background: hsl(0, 0%, 94%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+	color: hsl(220, 60%, 55%);
+}
+
+h1{
+	display: none;
+}
+
+h1.header-branco, h2.header-branco,
+h3.header-branco, h4.header-branco,
+h5.header-branco, h6.header-branco,
+span.header-branco, p.header-branco {
+	color: #fff;
+}
+
+.cor-primaria {
+	color: hsl(220, 80%, 55%);
+}
+
+.cor-secundaria {
+	color: hsl(220, 60%, 55%);
+}
+
+.cor-destaque {
+	color: hsl(330, 100%, 45%);
+	font-weight: 900;
+}
+
+.fundo-destaque{
+	background: hsl(330, 100%, 45%);
+	color: white;
+}
+
+.fundo-branco {
+	background: #fff;
+}
+
+.h2-header-menor{
+	font-size: 1.7em;
+}
+
+.h3-header-menor {
+	font-size: 1.5em;
+}
+
+.h4-header-menor {
+	font-size: 1.3em;
+	color: #000;
+}
+
+.h5-header-menor {
+	font-size: 1.1em;
+}
+
+
+/* Fim - Formatação padrão */
+
+/*Início - Formatação do Cabeçalho*/
+
+
+@media only screen and (max-width: 745px) {
+
+	#btn-doacao {
+		display: none;
+	}
+
+	#btn-parceiros {
+		display: none;
+	}
+}
+
+
+header {
+	background: hsl(220, 80%, 55%);
+	color: black;
+}
+
+
+
+header .navbar-brand img {
+	height: 50px;
+	width: 150px;
+
+}
+
+
+header .search-button img{
+	width: 20px;
+}
+
+nav a {
+	color: #fff;
+}
+
+nav a:hover {
+	color: hsl(180, 100%, 90%);
+}
+
+
+
+/*Fim- Formatação de Cabeçalho*/
+
+
+/*Início - Formatação de Rodapé*/
+
+footer {
+	padding: 20px;
+	font-size: 0.9rem;
+	background: hsl(220, 80%, 55%);
+}
+
+footer ul {
+	list-style: none;
+
+}
+
+footer ul li:hover {
+	text-decoration: underline;
+}
+
+footer h4 {
+	font-size: 1.3rem;
+}
+
+
+
+/*Fim- Formatação de Rodapé*/
+
+
+/* Início formatação conteúdo lateral - tela blog */
+
+aside#conteudo-lateral{
+	padding: 15px;
+}
+
+aside .cartao {
+	width: 100%;
+	background: #fff;
+	padding: 10px;
+	margin-bottom: 15px;
+	padding: 25px;
+	border: 1px solid hsl(0, 0%, 90%);
+}
+
+
+aside .cartao h3,
+aside .cartao h4{
+	color: hsl(211, 100%, 50%);
+	font-weight: 800;
+	text-decoration: none;
+
+}
+
+aside .cartao h3 {
+	border-bottom: 1px solid hsl(0, 0%, 85%);
+	font-size: 1.4rem;
+	letter-spacing: 1.5px;
+	word-spacing: 3px;
+
+}
+
+aside .cartao h4{
+	font-size: 1.1rem;
+	margin-bottom: 15px;
+	margin-top: 25px;
+	color: hsl(0,0%,0%);
+}
+
+aside .cartao h5{
+	font-size: 0.9rem;
+	text-indent: 32px;
+	color: hsl(220, 60%, 55%);
+}
+
+.redes-sociais img {
+	width: 35px;
+	margin-right: 10px;
+	margin-top: 15px;
+
+}
+
+/* fim formatação conteúdo lateral - tela blog */
+
+
+/* Início - formatação de página padrão */
+.pagina-padrao article h2 {
+	border-bottom: 1px solid hsl(0,0%,90%);
+}
+
+.pagina-padrao article h2, article h3 {
+	color: hsl(220, 60%, 55%);
+}
+
+.pagina-padrao article p{
+	margin-top: 20px;
+	line-height: 1.6rem;
+}
+
+
+.pagina-padrao article p.sem-indentacao::first-line{
+	text-indent: 0px;
+}
+
+
+.pagina-padrao article p::first-line {
+	text-indent: 30px;
+}
+
+
+.pagina-padrao article ol{
+	margin: 20px;
+}
+
+.pagina-padrao article ol li {
+	line-height: 2rem;
+}
+
+.pagina-padrao div.bloco-texto-entrelinha {
+	margin-bottom: 22px;
+	margin-top: 22px;
+}
+
+.img-grandes {
+	width: 98%;
+	text-align: center;
+}
+
+/* Fim - Formatação de página padrão */
+
+
+
+#tela-login .cartao-login{
+	min-width: 300px;
+}
+
+
+.container-pequeno{
+	height: 575px;
+}
+
+/* FORMATAÇÃO - PÁGINA HOME */
+
+
+/*Início - sessão Filtro-Formulário*/
+
+#form-filtro {
+	padding: 20px;
+	background: hsl(220, 70%, 55%);
+}
+
+
+#form-filtro label{
+	width: 70px;
+	margin-right: 15px;
+	text-align: left;
+}
+
+#form-filtro select {
+	width: 200px;
+	margin-bottom: 15px;
+}
+
+#form-filtro input {
+	margin-bottom: 15px;
+}
+
+
+#form-filtro button {
+	margin: auto;
+	color: white;
+	background: hsl(330, 100%, 45%);
+}
+
+
+/*Fim - sessão Filtro-Formulário*/
+
+
+
+/*Início sessão Catálogo*/
+
+
+	#menu-pets h3{
+		text-align: center;
+		margin-top: 3rem;
+	}
+
+	#menu-pets p.subtitulo {
+		text-align: center;
+		margin-bottom: -12px;
+	}
+
+	.card-deck{
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+
+  	.card {
+  		max-width:202px;
+  		min-width: 202px;
+  		margin-right: 10px;
+  	}
+
+
+  	.card img {
+  		width: 200px;
+  		height: 200px;
+  	}
+
+  	.card h4 {
+  		font-size: 18px;
+  		margin-top: -10px;
+  	}
+
+  	.card .card-body p {
+  		margin-top: -5px;
+  		margin-bottom: 10px;
+  		font-size: 12px;
+
+  	}
+
+  	.card-cinza {
+  		background: hsl(0, 0%, 94%);
+  		border: 1px solid hsl(0, 0%, 90%);
+  	}
+
+
+/*Fim - sessão Catálogo */
+
+
+
+/*Início - sessão por que adotar */
+
+.pq-adotar {
+	padding: 20px;
+}
+
+.pq-adotar h2 {
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+
+.pq-adotar .coluna {
+	margin-bottom: 15px;
+}
+
+/*Fim - sessão por que adotar*/
+
+
+/* FIM  FORMATAÇÃO - PÁGINA HOME */
+
+
+/* Início - tela cadastro de usuário */
+
+
+#tela-cadastro-usuario .form-lateral{
+	font-size: 0.8rem;
+	text-align: right;
+}
+
+#tela-cadastro-usuario .form-lateral strong{
+	font-size: 0.9rem;
+	text-align: right;
+}
+
+#tela-cadastro-usuario .asteristico-obrigatorio {
+	color: red;
+}
+
+
+.foto-perfil {
+	width: 120px;
+	cursor: pointer;
+}
+
+
+/* Fim - tela cadastro de usuário */
+
+/* Início área de postagens - tela blog*/
+
+#postagens article.cartao-postagens{
+	background: #fff;
+	padding: 15px;
+	margin-left: 15px;
+	margin-right: 15px;
+	border: 1px solid hsl(0, 0%, 90%);
+}
+
+#postagens article.cartao-postagens .cartao {
+	width: 100%;
+}
+
+#postagens article.cartao-postagens img {
+	 width: 100%;
+}
+
+#postagens article.cartao-postagens img:hover {
+	opacity: 0.7;
+}
+
+#postagens article.cartao-postagens h2{
+	margin-top: 40px;
+	margin-bottom: 8px;
+	color: hsl(220, 60%, 55%);
+}
+
+#postagens article.cartao-postagens .postagens-cabecalho{
+	font-size: 0.8rem;
+	color: hsl(0, 0%, 55%);
+	margin-right: 20px;
+}
+
+
+#postagens article.cartao-postagens p {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 1.1rem;
+	word-spacing: 8px;
+}
+
+#postagens button.veja-mais {
+
+}
+
+/* Fim sessão de postagens - tela blog */
+
+
+
+/* Início tela de perfil */
+
+#tela-perfil .pagina-publica h3{
+	font-size: 1.4rem;
+	text-align: center;
+	font-weight: 800;
+}
+
+#tela-perfil .pagina-publica h4{
+	font-size: 1rem;
+	font-weight: 700;
+	text-align: center;
+
+}
+
+#tela-perfil .pagina-publica {
+	background: hsl(0, 0%, 93%);
+	border: 1px solid hsl(0, 0%, 90%);
+	padding: 15px;
+
+
+}
+
+#tela-perfil .redes-sociais{
+	margin-top: -0.8em;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	width: 75%;
+}
+
+#tela-perfil .lista-animais-titulo {
+	color: hsl(330, 100%, 45%);
+	font-size: 1.4rem;
+	border-radius: 5px;
+	font-weight: 800;
+	max-width: 300px;
+
+}
+
+#tela-perfil .lista-animais {
+	justify-content: center;
+	display: flex;
+}
+
+/* Fim tela de perfil */

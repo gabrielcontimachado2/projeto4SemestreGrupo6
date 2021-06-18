@@ -1,0 +1,98 @@
+<div class="container container-fluid teste">
+
+    <section class="pagina-padrao fundo-branco mb-3 mb-3 py-4 px-5">
+
+        <div class="container">
+
+            <h2 class="mb-5"> Anuncie o seu pet </h2>
+
+            <form class="form-group was-validated" [formGroup]="anuncioGroup" (ngSubmit)="addAnuncios()">
+
+                <div class="row mb-5">
+
+                    <div class="col-sm-6">
+
+                        
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite o nome do anuncio" formControlName="nome">
+
+                        <label for="cidade">Localizacao (apenas a cidade)</label>
+                        <input type="text" id="cidade" name="Localizacao" class="form-control mb-3" placeholder="Digite a cidade do anuncio" formControlName="localizacao">
+         
+                        <label for="dataNascimento">Data de nascimento</label>
+                        <input type="date" id="cidade" name="DataNascimento" class="form-control mb-3" formControlName="dataNascimento" required>
+
+                        <label for="raca">Raça</label>
+                        <input type="text" id="raca" name="raca" class="form-control mb-3" placeholder="Digite a raça do animal" formControlName="raca" required>
+
+
+                    </div>
+
+                    <div class="col-sm-6">
+
+                        <label for="Porte">Porte</label>
+                        <select id="porte" class="form-control mb-3" formControlName="porte" required>
+                            <option>Pequeno</option>
+                            <option>Médio</option>
+                            <option>Grande</option>
+                        </select>
+
+                        <label for="categoriaAnimal">Animal</label>
+                        <select id="porte" class="form-control mb-3" formControlName="tipoAnimal" required>
+                            <option>Cachorro</option>
+                            <option>Gato</option>
+                        </select>
+
+                        <label for="genero">Sexo</label>
+                        <select id="genero" class="form-control mb-3" formControlName="sexo" required>
+                            <option>Macho</option>
+                            <option>Fêmea</option>
+                        </select>
+
+                        
+                        
+                    </div>
+                    <div class="col-sm-6">
+
+                        
+
+                    </div>
+
+                </div>
+
+                <label form="historia-pet" >Conte um pouco da história do pet</label>
+                <textarea id="historia-pet"class="form-control" placeholder="Digite aqui a história do seu pet" formControlName="historia"></textarea>
+                <br>
+
+                <label for="personlidade"  formControlName="personalidade">Como é a personalidade dele?</label>
+                <textarea id="personalidade" class="form-control" placeholder="Digite aqui a personalidade do seu pet" formControlName="personalidade"></textarea>
+                <br>
+
+                <label for="observacoes" formControlName="observacoes">Observações sobre o pet</label>
+                <textarea id="observacoes" class="form-control" placeholder="Digite aqui algumas observações importantes do seu pet" formControlName="observacoes"></textarea>
+
+                <label for="imagens-pet[]" class="mt-5 font-weight-bold" >Insira uma imagem para o anuncio do seu pet:</label>
+                <input type="file" name="imagens-pet[]" id="imagens-pet[]" class="mt-1 d-block" multiple="multiple" (change)="onImageChanged($event)">
+                <br>
+                
+                <div class="form-group">
+                    <ngx-dropzone accept="image/jpeg,image/jpg,image/png" (change)="onSelect($event)">
+                        <ngx-dropzone-label>Coloque as imagens aqui</ngx-dropzone-label>
+                        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">  
+                            <ngx-dropzone-label></ngx-dropzone-label>
+                        </ngx-dropzone-image-preview>
+                    </ngx-dropzone>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary mt-4" placeholder="Digite aqui">Enviar</button>
+
+            </form>
+
+            
+        </div>
+        
+    </section>
+
+
+</div>
