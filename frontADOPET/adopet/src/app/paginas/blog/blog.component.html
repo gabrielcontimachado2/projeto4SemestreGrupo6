@@ -5,12 +5,12 @@
         <section id="postagens" class="col-7">
             <article class="cartao-postagens">
 
-                <div class="cartao">
-                    <img src="assets/Blog/capa-postagens/teste.jpg">
-                    <h2>5 Dicas para controlar a ansiedade do seu cão em meio a pandemia</h2>
+                <div class="cartao" *ngFor="let blog of blogs">
+                    <img src={{blog.capaPostagem}}>
+                    <h2>{{blog.titulo}}</h2>
 
                     <div>
-                        <span class="postagens-cabecalho postagens-data"></span>
+                        <span class="postagens-cabecalho postagens-data">{{blog.dataCriacao}}</span>
                         <span class="postagens-cabecalho postagens-categoria"></span>
                     </div>
                     <p>
