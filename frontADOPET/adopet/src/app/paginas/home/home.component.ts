@@ -12,6 +12,7 @@ import { AutenticadorService } from 'src/app/servicos/autenticador.service';
 })
 export class HomeComponent implements OnInit {
 
+  //Armazenas os anuncios que virão da API
   anuncios: any=[];
   constructor(private route: Router, private anuncioService: AnuncioServiceService) { }
 
@@ -19,7 +20,7 @@ export class HomeComponent implements OnInit {
     this.getAnuncios();
   }
 
-
+  //Receber todos os anuncios que estão salvos na API REST
   getAnuncios(){
     this.anuncioService.getAnuncios()
     .subscribe(
@@ -32,6 +33,7 @@ export class HomeComponent implements OnInit {
     )
   }
 
+  //Ir para um anuncio utilizando o id desse anuncio
   irAnuncio(anuncio: any){
     this.route.navigate(['anuncioPet', anuncio.id]);
   }

@@ -9,6 +9,7 @@ from adopetGeral import views
 from django.conf.urls import url
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
+#Rotas criadas com as views para a API REST
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)

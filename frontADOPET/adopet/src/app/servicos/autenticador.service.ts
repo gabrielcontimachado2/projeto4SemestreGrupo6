@@ -15,16 +15,20 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   providedIn: 'root'
 })
 export class AutenticadorService {
-   
+  
+  //Informações do usuario decifradas pelo JWT
   userInfo = new BehaviorSubject(null);
+  //Usado para ler um JWT
   jwtHelper = new JwtHelperService();
   
+  //Url base da API
   backUrl = baseUrl;
 
   constructor(private http: HttpClient) { 
     this.loadUsuario();
   }
 
+  //Função responsavel por receber os dados de login enviar para API e decifrar o JWT recebio da API REST
   login(login: any): Observable<boolean> {
     if(login){
     return this.http.post(this.backUrl + 'api/token/',login).pipe(
@@ -55,10 +59,12 @@ export class AutenticadorService {
       }
   }
 
+  //Realizar o refresh do token
   refreshToken(payload: any){
     return this.http.post(this.backUrl + "api/token/refresh/",payload);
   }
  
+  //Deslogar do sistema, excluir os token no localstorage
   logout() {
     localStorage.removeItem('acess');
     localStorage.removeItem('refresh');

@@ -10,6 +10,7 @@ import { AutenticadorService } from 'src/app/servicos/autenticador.service';
 })
 export class LoginComponent implements OnInit {
 
+
   showErrorMessage: any;
   formGroup: FormGroup;
   private router: Router;
@@ -32,6 +33,7 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  //Realizar o login, caso o login seja autenticado pela api, retorna o usuario para a home, se não continuar na pagina de login
   loginProcess(){
     this.autenticador.login(this.formGroup.value)
     .subscribe(
@@ -39,7 +41,7 @@ export class LoginComponent implements OnInit {
       if(data){
        this.route.navigate(['home']);
       }else{
-       alert('deu ruim');
+       alert('erro');
       }
       },
       (error)=>{

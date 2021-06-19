@@ -5,13 +5,13 @@ from django.db.models.fields import DateField, DateTimeCheckMixin, DateTimeField
 from django.db.models.fields.files import ImageField
 from datetime import date, datetime
 
-# Create your models here.
 
+#Local de upload para o album de fotos de um anuncio
 def upload_location(instance, filename):
     extension = filename.split('.')[-1]
     return 'media/fotosAnuncios/', extension
 
-
+#Model responsavel pelo anuncio de um animal
 class AnuncioAnimal(models.Model):
 
     SEXO_OPCOES = (
@@ -39,7 +39,6 @@ class AnuncioAnimal(models.Model):
     sexo = models.CharField(choices=SEXO_OPCOES, default='Macho', help_text="Escolha o sexo do animal", max_length=5)
     dataNascimento = models.DateField(help_text="dd/mm/aaaa")
     personalidade = models.TextField(help_text="Personalidade do pet.")
-    fotoAlbum = ImageField(upload_to=upload_location, help_text = "Escolha diversas imagens", blank=True, null=True)
     observacoes = models.TextField(help_text="Observações do pet.")
     historia = models.TextField(help_text="Digite a historia do pet", null=True)
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
@@ -55,6 +54,7 @@ class AnuncioAnimal(models.Model):
         db_table = 'tab_anuncioAnimal'
         verbose_name_plural=u'Anuncios'
 
+#Model ligado ao model de anuncio de animal, responsavel por fazer um album de fotos dentro do anuncio
 class FotosAnuncio(models.Model):
     anuncio = models.ForeignKey(AnuncioAnimal, on_delete=models.CASCADE)
     foto = models.ImageField(upload_to="media/fotosAnuncio", verbose_name="Foto", help_text="Escolha a foto", blank=True)
@@ -68,6 +68,7 @@ class FotosAnuncio(models.Model):
         db_table = 'tab_fotosAnuncio'
         verbose_name_plural=u'Fotos dos anuncios'
 
+#Model para o perfil da pessoa
 class Pessoa(models.Model):
 
     GENERO_OPCOES = (
@@ -93,6 +94,7 @@ class Pessoa(models.Model):
         db_table = 'tab_Pessoa'
         verbose_name_plural=u'Pessoas'
 
+#Model do blog da aplicação
 class Blog(models.Model):
 
     titulo = models.CharField(verbose_name="Titulo", max_length=250, help_text="Digite o titulo da postagem")
@@ -109,6 +111,7 @@ class Blog(models.Model):
         db_table = 'tab_Blog'
         verbose_name_plural=u'Blogs'
 
+#Model ligado ao blog, para salvar os comentarios realizados na postagem
 class ComentarioBlog(models.Model):
     postagem = models.ForeignKey(Blog, on_delete=models.CASCADE)
     comentario = models.TextField(help_text="Digite seu comentario")

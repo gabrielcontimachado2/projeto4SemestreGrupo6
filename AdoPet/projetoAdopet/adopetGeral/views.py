@@ -11,12 +11,11 @@ from django.http import JsonResponse
 import json
 from rest_framework.permissions import IsAuthenticated
 
-
+#Views para disponibilizar a API para o frontend
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
     
-
 class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
@@ -30,7 +29,7 @@ class AnuncioAnimalViewSet(viewsets.ModelViewSet):
     queryset = AnuncioAnimal.objects.all()
     serializer_class = AnuncioSerializer
     permissions_classes = (permissions.IsAuthenticated, )
-
+    
     #def post(self, request, *args, **kwargs):
     #    fotos = []
     #    nome = request.data['nome']
@@ -52,6 +51,7 @@ class AnuncioAnimalViewSet(viewsets.ModelViewSet):
     #    FotosAnuncio.objects.create(descricaoFoto=fotos.name, anuncio=nome, foto=fotos)
     #    return HttpResponse({'mensagem': 'Anuncio criado'}, status=200)
 
+    #Create que recebe um request do angular, para separar os arquivos de fotos e enviar para o serializer os dados do anuncio
     def create(self, request,  *args, **kwargs):
         fotos = []
         try:     

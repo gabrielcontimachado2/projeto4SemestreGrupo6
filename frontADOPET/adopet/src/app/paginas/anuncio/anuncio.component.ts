@@ -28,6 +28,7 @@ export class AnuncioComponent implements OnInit {
     this.initForm();
   }
 
+//Iniciar um form com os dados que estão sendo passado no angular
 initForm(){
     this.anuncioGroup = new FormGroup({
     nome: new FormControl('', Validators.required),
@@ -57,6 +58,7 @@ initForm(){
       )
   }
 
+  //Enviar os dados que foram salvos no form, para a API REST
   addAnuncios(){
 
     const anuncios = new Anuncio();
@@ -78,10 +80,12 @@ initForm(){
     });  
   }
 
+  //Se a imagem mudar ele permanece com as ultimas que foram adicionada
   onImageChanged(event:any){
     this.fotoAnuncioA = event.target.files[0];
   }
 
+  
   onSelect(event: any) {
     console.log(event);
     this.files.push(event.addedFiles);

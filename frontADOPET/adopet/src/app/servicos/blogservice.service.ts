@@ -10,6 +10,7 @@ export class BlogserviceService {
 
   constructor(private http: HttpClient) { }
 
+  //Receber as postagens da API
   getBlog(){
     return this.http.get(this.blogUrl);
   }

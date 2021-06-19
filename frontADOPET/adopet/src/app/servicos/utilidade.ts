@@ -17,6 +17,7 @@ export default class Utilidade {
         return btoa(e.target.result);
     }
 
+    //Gerar um formData para enviar para a enviar as fotos com mais facilidade para API
     static gerarFormData(object: any): FormData {
         const formData: FormData = new FormData();
         for (const property in object) {
