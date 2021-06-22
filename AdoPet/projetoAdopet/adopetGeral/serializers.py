@@ -38,7 +38,7 @@ class AnuncioSerializer(serializers.ModelSerializer):
                                                     localizacao=data['localizacao'], raca=data['raca'],
                                                     porte=data['porte'], sexo=data['sexo'],
                                                     dataNascimento=data['dataNascimento'],personalidade=data['personalidade'],
-                                                    observacoes=data['observacoes'], historia=data['historia'], fotoAnuncio=data['fotoAnuncio'])
+                                                    observacoes=data['observacoes'], historia=data['historia'], fotoAnuncio=data['fotoAnuncio'], petName=data['petnome'])
             for foto in fotos:
                 FotosAnuncio.objects.create(descricaoFoto=foto.name, anuncio=instance, foto=fotos)
             return instance

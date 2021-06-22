@@ -10,22 +10,21 @@
 
                 <div class="row mb-5">
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-6">                      
+                        <label for="nome">Nome do anuncio</label>
+                        <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite o nome do anuncio" formControlName="nome" required>
 
-                        
-                        <label for="nome">Nome</label>
-                        <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite o nome do anuncio" formControlName="nome">
+                        <label for="nome">Nome do pet</label>
+                        <input type="text" id="pet" name="pet" class="form-control mb-3" placeholder="Digite o nome do seu pet" formControlName="petnome"required>
 
                         <label for="cidade">Localizacao (apenas a cidade)</label>
-                        <input type="text" id="cidade" name="Localizacao" class="form-control mb-3" placeholder="Digite a cidade do anuncio" formControlName="localizacao">
+                        <input type="text" id="cidade" name="Localizacao" class="form-control mb-3" placeholder="Digite a cidade do anuncio" formControlName="localizacao"required>
          
                         <label for="dataNascimento">Data de nascimento</label>
                         <input type="date" id="cidade" name="DataNascimento" class="form-control mb-3" formControlName="dataNascimento" required>
 
                         <label for="raca">Raça</label>
                         <input type="text" id="raca" name="raca" class="form-control mb-3" placeholder="Digite a raça do animal" formControlName="raca" required>
-
-
                     </div>
 
                     <div class="col-sm-6">
@@ -48,28 +47,20 @@
                             <option>Macho</option>
                             <option>Fêmea</option>
                         </select>
-
-                        
-                        
-                    </div>
-                    <div class="col-sm-6">
-
-                        
-
                     </div>
 
                 </div>
 
                 <label form="historia-pet" >Conte um pouco da história do pet</label>
-                <textarea id="historia-pet"class="form-control" placeholder="Digite aqui a história do seu pet" formControlName="historia"></textarea>
+                <textarea id="historia-pet"class="form-control" placeholder="Digite aqui a história do seu pet" formControlName="historia" required></textarea>
                 <br>
 
                 <label for="personlidade"  formControlName="personalidade">Como é a personalidade dele?</label>
-                <textarea id="personalidade" class="form-control" placeholder="Digite aqui a personalidade do seu pet" formControlName="personalidade"></textarea>
+                <textarea id="personalidade" class="form-control" placeholder="Digite aqui a personalidade do seu pet" formControlName="personalidade" required></textarea>
                 <br>
 
                 <label for="observacoes" formControlName="observacoes">Observações sobre o pet</label>
-                <textarea id="observacoes" class="form-control" placeholder="Digite aqui algumas observações importantes do seu pet" formControlName="observacoes"></textarea>
+                <textarea id="observacoes" class="form-control" placeholder="Digite aqui algumas observações importantes do seu pet" formControlName="observacoes" required></textarea>
 
                 <label for="imagens-pet[]" class="mt-5 font-weight-bold" >Insira uma imagem para o anuncio do seu pet:</label>
                 <input type="file" name="imagens-pet[]" id="imagens-pet[]" class="mt-1 d-block" multiple="multiple" (change)="onImageChanged($event)">

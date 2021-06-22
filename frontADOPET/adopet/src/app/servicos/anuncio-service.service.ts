@@ -18,6 +18,10 @@ export class AnuncioServiceService {
     return this.http.get(this.anuncioUrl);
   }
 
+  getAnuncioId(id : any){
+    return this.http.get(this.anuncioUrl + id + "/");
+  }
+
   //addAnuncio (anuncio: any){
   //  return this.http.post(this.anuncioUrl, anuncio);
   //}

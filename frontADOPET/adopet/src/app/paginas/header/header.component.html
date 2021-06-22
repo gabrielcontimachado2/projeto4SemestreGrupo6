@@ -1,13 +1,13 @@
 <!-- Início do cabeçalho -->
 <header class="mb-3 ">				
     <div class="row ml-2">
-        <a class="col navbar-brand" href="index.html">
+        <a class="col navbar-brand" >
             <img src='/assets/logo-adopet.svg' routerLink="/home">
             <h1>Adopet</h1>
         </a>       
         <span class=" d-flex col-5 mr-3  justify-content-end">
             <button class="h-75 ml-2 my-2 btn btn-sm btn-light" ><a routerLink="/cadastro"> <strong>Cadastre-se</strong></a></button>
-            <button class="h-75 ml-2  my-2 btn btn-sm btn-light" ><a routerLink="/login"> <strong>Login</strong></a></button>
+            <button class="h-75 ml-2 my-2 btn btn-sm btn-light" ><a routerLink=""> <strong>Login</strong></a></button>
         </span>
     </div>
     <nav class="navbar navbar-dark	row navbar-expand-lg">
@@ -15,10 +15,8 @@
                 <span class="navbar-toggler-icon"></span>
         </button>
         <div id="navegacao " class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-2">
-    
-    
-              <li class="nav-item mr-2 col dropdown">
+            <ul class="navbar-nav ml-2">  
+            <li class="nav-item mr-2 col dropdown">
                 <div ngbDropdown class="d-inline-block">
                   <span class="dropdown-toggle text-light" id="dropdownBasic1" data-toggle="dropdown" ngbDropdownToggle>Quero ajudar</span>
                   <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownBasic1">
@@ -34,22 +32,19 @@
                 <div ngbDropdown class="d-inline-block">
                   <span class="dropdown-toggle text-light" id="dropdownBasic1" data-toggle="dropdown" ngbDropdownToggle>Sobre nós</span>
                     <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownBasic1">
-                      <a href="#" class="nav-link dropdown-item text-dark px-3">O que é a Adopet?</a>
+                      <a  routerLink="/oqueadopet"  href="#" class="nav-link dropdown-item text-dark px-3" routerLinkActive="active">O que é a Adopet?</a>
                       <a routerLink="/prestacaoContas" href="#" class="nav-link dropdown-item text-dark px-3"routerLinkActive="active">Prestação de contas</a>
                     </div>
-                </div>
+                </div>  
               </li>	
-                    <li class="nav-item mr-2 col">
-                        <a href="" class="nav-link">Quero adotar</a>
-                    </li>
+                    <li class="nav-item mr-2 col"><a routerLink="">Quero adotar</a></li>
                     <li class="nav-item mr-2 col"><a routerLink="/anuncio">Quero anunciar</a></li>
-                    <li class="nav-item mr-2 col">
-                        <a href="blog.html" class="nav-link" routerLink="/blog">Blog</a>
-                    </li>
+                    <li class="nav-item mr-2 col"><a routerLink="/blog">Blog</a></li>
+
                     <li class="nav-item mr-2 col">
                         <a href="" class="nav-link">Nossos parceiros</a>
                     </li>
-                  <li class="nav-item mr-2 col">
+                    <li class="nav-item mr-2 col">
                         <a href="" class="nav-link">Avalie-nos</a>
                     </li>
                 </ul>

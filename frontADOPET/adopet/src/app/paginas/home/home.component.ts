@@ -28,13 +28,13 @@ export class HomeComponent implements OnInit {
       this.anuncios = value;
    },
    (error) => {
-      console.log('failted to load todos')
+      console.log('erro ao pegar os anuncios')
    }
     )
   }
 
   //Ir para um anuncio utilizando o id desse anuncio
-  irAnuncio(anuncio: any){
-    this.route.navigate(['anuncioPet', anuncio.id]);
+  irAnuncio(anuncio : any){
+    this.route.navigate(['/anuncioPet', anuncio.id]);
   }
 }

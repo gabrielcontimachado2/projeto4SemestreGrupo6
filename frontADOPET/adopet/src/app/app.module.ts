@@ -20,6 +20,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { AnuncioPetComponent } from './paginas/anuncio-pet/anuncio-pet.component';
 import { BlogComponent } from './paginas/blog/blog.component';
 import { PrestacaoContasComponent } from './paginas/prestacao-contas/prestacao-contas.component';
+import { OqueadopetComponent } from './paginas/oqueadopet/oqueadopet.component';
 
 
 
@@ -36,6 +37,7 @@ import { PrestacaoContasComponent } from './paginas/prestacao-contas/prestacao-c
     AnuncioPetComponent,
     BlogComponent,
     PrestacaoContasComponent,
+    OqueadopetComponent,
   ],
   imports: [
     BrowserModule,

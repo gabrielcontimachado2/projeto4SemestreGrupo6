@@ -28,7 +28,7 @@
                         <img src='assets/logo_adestradores.jpeg' class="img-fluid">
                     </div>
 
-                  </div><!--/Inner -->
+                    </div><!--/Inner -->
 
                   <!-- Controles -->
                   <a href="#carousel-home" class="carousel-control-prev" data-slide="prev">
@@ -162,6 +162,8 @@
 
                         <div class="card" *ngFor="let anuncio of anuncios" >
 
+
+                            
                             <div class="rounded">
                                 <img src={{anuncio.fotoAnuncio}} class="rounded">
                             </div>
@@ -174,8 +176,9 @@
                                 <span class="border rounded">P</span>
                                 <span class="border rounded">M</span>
                                 <span class="border rounded">G</span>
+                        
 
-                                <a (click)="irAnuncio(anuncio.id)"href="#" class="btn btn-sm stretched-link fundo-destaque">Ver o perfil</a>
+                                <a routerLink="/anuncioPet/{{anuncio.id}}" href="#" class="btn btn-sm stretched-link fundo-destaque">Ver o perfil</a>
                             </div>
 
                         </div>

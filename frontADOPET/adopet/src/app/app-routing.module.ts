@@ -9,16 +9,18 @@ import { AnuncioPetComponent } from 'src/app/paginas/anuncio-pet/anuncio-pet.com
 import { AuthGuard } from './guard/autenGuard.guard';
 import { BlogComponent } from './paginas/blog/blog.component';
 import { PrestacaoContasComponent } from './paginas/prestacao-contas/prestacao-contas.component';
+import { OqueadopetComponent } from './paginas/oqueadopet/oqueadopet.component';
 
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path:'home',component: HomeComponent, canActivate: [AuthGuard]},
-  {path: 'cadastro', component: CadastroComponent, canActivate: [AuthGuard]},
+  {path: 'cadastro', component: CadastroComponent},
   {path: 'anuncio', component: AnuncioComponent, canActivate: [AuthGuard]},
   {path: 'anuncioPet/:id', component: AnuncioPetComponent, canActivate: [AuthGuard]},
   {path: 'blog', component: BlogComponent, canActivate: [AuthGuard]},
   {path: 'prestacaoContas', component: PrestacaoContasComponent, canActivate: [AuthGuard]},
+  {path: 'oqueadopet', component: OqueadopetComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

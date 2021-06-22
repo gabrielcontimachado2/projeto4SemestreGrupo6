@@ -20,7 +20,6 @@ router.register(r'Blog', views.BlogViewSet)
 
 urlpatterns = [
     url('admin/', admin.site.urls),
-    url('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^', include(router.urls)),
     url('api-auth/', include('rest_framework.urls')),
     url('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),

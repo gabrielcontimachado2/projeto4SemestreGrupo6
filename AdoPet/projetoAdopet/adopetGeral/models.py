@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser, User
 from django.db.models.base import Model, ModelState
 from django.db.models.fields import DateField, DateTimeCheckMixin, DateTimeField
 from django.db.models.fields.files import ImageField
@@ -10,6 +10,7 @@ from datetime import date, datetime
 def upload_location(instance, filename):
     extension = filename.split('.')[-1]
     return 'media/fotosAnuncios/', extension
+
 
 #Model responsavel pelo anuncio de um animal
 class AnuncioAnimal(models.Model):
@@ -32,6 +33,7 @@ class AnuncioAnimal(models.Model):
 
     fotoAnuncio = ImageField(upload_to="media/fotoAnuncio", help_text = "Escolha uma imagem", blank=True, null=True)
     nome = models.CharField(max_length=50, help_text="Nome anuncio.")
+    petName = models.TextField(help_text="Nome do seu pet.", blank=True, null=True)
     tipoAnimal = models.CharField(choices=TIPO_ANIMAL, default='Gato', help_text="Escolha o tipo do seu pet", max_length=8)
     localizacao = models.TextField(help_text="Localização do animal.")
     raca = models.CharField(max_length=100, help_text="Raça do animal")

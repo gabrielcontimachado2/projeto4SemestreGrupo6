@@ -32,6 +32,7 @@ export class AnuncioComponent implements OnInit {
 initForm(){
     this.anuncioGroup = new FormGroup({
     nome: new FormControl('', Validators.required),
+    petnome: new FormControl('', Validators.required),
     tipoAnimal: new FormControl('', Validators.required),
     localizacao:new FormControl('', Validators.required),
     raca: new FormControl('', Validators.required),
@@ -63,6 +64,7 @@ initForm(){
 
     const anuncios = new Anuncio();
     anuncios.nome = this.anuncioGroup.controls.nome.value;
+    anuncios.petName = this.anuncioGroup.controls.petnome.value;
     anuncios.tipoAnimal = this.anuncioGroup.controls.tipoAnimal.value;
     anuncios.localizacao = this.anuncioGroup.controls.localizacao.value;
     anuncios.raca = this.anuncioGroup.controls.raca.value;

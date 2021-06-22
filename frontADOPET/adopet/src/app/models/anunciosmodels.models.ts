@@ -1,5 +1,6 @@
 export class Anuncio{
     nome: number;
+    petName: string;
     observacoes: string;
     tipoAnimal: number;
     dataNascimento: string;
@@ -11,4 +12,6 @@ export class Anuncio{
     historia: string;
     fotos: File[] = [];
     fotoAnuncio: any;
+    id: any;
 }
+
